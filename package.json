@@ -33,6 +33,6 @@
   "devDependencies": {
     "k6": "^0.0.0",
     "nodemon": "^2.0.15",
-    "serverless": "^1.54.0"
+    "serverless": "^2.69.0"
   }
 }
