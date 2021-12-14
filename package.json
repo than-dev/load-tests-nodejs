@@ -1,20 +1,38 @@
 {
   "name": "load-test",
   "version": "1.0.0",
-  "description": "...docs in production",
+  "description": "simple api to execute load-tests",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "deploy": "serverless deploy",
+    "start": "node api/index.js",
+    "debug": "nodemon --inspect api/index.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/NathanCotrim/Load-Test-NodeJS.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "tests",
+    "load-tests",
+    "CI/CD",
+    "deploy"
+  ],
+  "author": "Nathan Cotrim",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/NathanCotrim/Load-Test-NodeJS/issues"
   },
-  "homepage": "https://github.com/NathanCotrim/Load-Test-NodeJS#readme"
+  "homepage": "https://github.com/NathanCotrim/Load-Test-NodeJS#readme",
+  "dependencies": {
+    "koa": "^2.13.4",
+    "koa-bodyparser": "^4.3.0",
+    "koa-router": "^10.1.1",
+    "serverless-http": "^2.7.0"
+  },
+  "devDependencies": {
+    "k6": "^0.0.0",
+    "nodemon": "^2.0.15",
+    "serverless": "^1.54.0"
+  }
 }
