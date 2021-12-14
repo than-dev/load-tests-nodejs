@@ -20,7 +20,7 @@ const hello = ctx => {
     .then(() => {
       ctx.set('X-Request-Delay', time)
       ctx.body = { greet: `Hello ${name}!` }
-      ctx.status = 200
+      ctx.status = (Math.random() * 10) > 5 ? 200 : 500 
     })
 }
 
