@@ -1,9 +1,11 @@
-version: '3'
+version: '3.4'
 
 services:
   api:
+    container_name: api
     build: .
     command: npm start
+    hostname: api
     ports:
       - 3000:3000
     environment:
@@ -12,14 +14,14 @@ services:
       - loadtest
 
   k6:
+    container_name: k6
     image: loadimpact/k6
     environment:
       - LOCAL_API_URL=http://api:3000
     volumes:
       - ./tests:/tests
     stop_signal: SIGKILL
-    networks:
-      - loadtest
+    network_mode: host
 
 networks:
   loadtest:
