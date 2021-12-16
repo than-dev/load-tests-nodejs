@@ -3,7 +3,7 @@ const app = require('./app')
 const port = parseInt(process.env.PORT || 3000)
 
 app
-  .listen(3000)
+  .listen(5000)
   .once('listening', () =>
     console.log(`Server listening at ${port}`)
   )

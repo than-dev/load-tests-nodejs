@@ -17,4 +17,4 @@ test/local:
 	k6 run tests/loadtest/index.js
 
 test/docker:
-	sudo docker-compose run --rm k6 run /tests/load-test/index.js
+	sudo docker-compose run --rm k6 run --out influxdb=http://influxdb:8086/resultsdb /tests/load-test/index.js
