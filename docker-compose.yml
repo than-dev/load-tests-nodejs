@@ -2,7 +2,7 @@ version: '3.4'
 
 services:
   api:
-    container_name: api
+    container_name: api-loadtest
     build: .
     command: npm start
     hostname: api
@@ -28,7 +28,7 @@ services:
     image: influxdb:1.8
     container_name: influxdb
     env_file:
-      - 'env.influxdb'
+      - '.env.influxdb'
     volumes:
       - /srv/docker/influxdb/data:/var/lib/influxdb
     networks:
@@ -38,7 +38,7 @@ services:
     image: grafana/grafana:latest
     container_name: grafana
     env_file:
-      - 'env.grafana'
+      - '.env.grafana'
     ports:
       - 3000:3000
     user: '0'

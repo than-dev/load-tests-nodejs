@@ -4,9 +4,10 @@
   "description": "simple api to execute load-tests",
   "main": "index.js",
   "scripts": {
-    "deploy": "serverless deploy",
     "start": "node api/index.js",
-    "debug": "nodemon --inspect api/index.js"
+    "debug": "nodemon --inspect api/index.js",
+    "up:deps": "sudo docker-compose up -d",
+    "load-test": "sudo docker-compose run --rm k6 run /tests/load-test/index.js "
   },
   "repository": {
     "type": "git",
@@ -27,12 +28,10 @@
   "dependencies": {
     "koa": "^2.13.4",
     "koa-bodyparser": "^4.3.0",
-    "koa-router": "^10.1.1",
-    "serverless-http": "^2.7.0"
+    "koa-router": "^10.1.1"
   },
   "devDependencies": {
     "k6": "^0.0.0",
-    "nodemon": "^2.0.15",
-    "serverless": "^2.69.0"
+    "nodemon": "^2.0.15"
   }
 }
